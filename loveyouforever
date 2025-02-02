@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambar Bergerak & Bersuara</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        img {
+            width: 300px;
+            cursor: pointer;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <h2>Klik gambar untuk mendengar suara</h2>
+    <div class="container">
+        <img id="image" src="Doa-Muslimaah.jpg" alt="Gambar Berdoa">
+    </div>
+    <audio id="audio" src="audio.mp3"></audio>
+    <script>
+        document.getElementById("image").addEventListener("click", function() {
+            document.getElementById("audio").play();
+        });
+    </script>
+</body>
+</html>
